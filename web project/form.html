@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New User</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #12c0cc46;
+        }
+        form {
+        width: 100%;
+        background-color: #b3dbe6;
+        max-width: 400px;
+        margin: 0 auto;
+        margin-top: 20px;
+        padding: 20px;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }input {
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 5px;
+    }
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+    <h2>Add New User</h2>
+    <form id="registerForm">
+        <label>ID: <input type="number" id="id" required></label><br>
+        <label>Name: <input type="text" id="name" required></label><br>
+        <label>Username: <input type="text" id="username" required></label><br>
+        <label>Email: <input type="email" id="email" required></label><br>
+        <label>Address: <input type="text" id="address" required></label><br>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.has('id')) {
+        document.getElementById('id').value = params.get('id');
+        document.getElementById('name').value = params.get('name');
+        document.getElementById('username').value = params.get('username');
+        document.getElementById('email').value = params.get('email');
+        document.getElementById('address').value = params.get('address');
+    }
+});
+    </script>
+    <script src="./script.js"></script>
+</body>
+</html>
